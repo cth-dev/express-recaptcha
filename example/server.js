@@ -1,3 +1,5 @@
+import 'dotenv/config'
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const engines = require('consolidate')
@@ -5,8 +7,8 @@ const Recaptcha = require('../dist').RecaptchaV2
 const RecaptchaV3 = require('../dist').RecaptchaV3
 const RECAPTCHA_SITE_KEY_V2 = 'xxxxx'
 const RECAPTCHA_SECRET_KEY_V2 = 'xxxxx'
-const RECAPTCHA_SITE_KEY_V3 = 'xxxxx'
-const RECAPTCHA_SECRET_KEY_V3 = 'xxxxx'
+const RECAPTCHA_SITE_KEY_V3 = process.env.RECAPTCHA_SITE_KEY_V3
+const RECAPTCHA_SECRET_KEY_V3 = process.env.RECAPTCHA_SECRET_KEY_V3
 const app = express()
 const recaptcha = new Recaptcha(RECAPTCHA_SITE_KEY_V2, RECAPTCHA_SECRET_KEY_V2)
 const recaptchaV3 = new RecaptchaV3(

@@ -52,6 +52,7 @@
         "node": ">= 6"
     },
     "dependencies": {
+        "dotenv": "^16.0.1",
         "express-recaptcha": "^5.1.0"
     }
 }
